@@ -15,14 +15,14 @@ public class QueryResolver implements GraphQLQueryResolver{
 	private FeedbackRepository feedbackRepository;
 	
 
+	
+
 	public QueryResolver(FeedbackRepository feedbackRepository) {
 		super();
 		this.feedbackRepository = feedbackRepository;
 	}
 
 	public List<Feedback> getFeedbacks() {
-		System.out.println("yash");
-		System.out.println(feedbackRepository.findAll());
 		return (List<Feedback>) feedbackRepository.findAll();
 	}
 	

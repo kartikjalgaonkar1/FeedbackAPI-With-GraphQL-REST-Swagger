@@ -11,5 +11,5 @@ public interface FeedbackRepository extends JpaRepository<Feedback, Integer>{
 	Optional<Feedback> findById(Integer id);
 	Integer deleteById(Integer id);
 	List<Feedback> findAllByOrderByIdDesc();
-	Optional<Feedback> findById(Long id);
+	//Optional<Feedback> findById(Long id);
 }

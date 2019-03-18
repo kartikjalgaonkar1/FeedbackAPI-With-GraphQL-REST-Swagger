@@ -5,7 +5,6 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resources;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +29,7 @@ public class FeedbackService {
 
     public FeedbackResource getFeedbackById(Long id) {
         logger.info("action=getFeedbackById status=start id={}", id);
-        Feedback feedbackById = repository.findById(id).orElseThrow(
+        Feedback feedbackById = repository.findById(id.intValue()).orElseThrow(
                 () -> {
                     logger.info("action=getFeedbackById found=false status=finished id={}", id);
                     return new FeedbackNotFoundException("feedback with id " + id + " not found");
